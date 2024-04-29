@@ -251,7 +251,7 @@ const HangulSoundRules = new Map<string, string>([
 	['ᆸᄂ', 'mn'],
 	['ᆸᄅ', 'mr'],
 	['ᆸᄆ', 'mm'],
-	['ᆹᄋ', 'bs'],
+	['ᆹᄋ', 'ps'],
 	['ᆺᄋ', 'ss'],
 	['ᆻᄋ', 'ss'],
 	['ᆬᄋ', 'nj'],
