@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { convertHangulToDPRK } from '$lib/convert';
+	import { convertHangulToDPRK } from 'koconv';
 	import MdiTransferDown from '~icons/mdi/transfer-down';
 	// import smartquotes from 'smartquotes';
 	import { tick } from 'svelte';

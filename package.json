@@ -32,5 +32,8 @@
     "unplugin-icons": "^0.18.5",
     "vite": "^5.0.3"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "koconv": "^0.1.1"
+  }
 }
