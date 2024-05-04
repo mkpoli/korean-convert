@@ -136,6 +136,8 @@
 </main>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+
 	main {
 		display: flex;
 		flex-direction: column;
@@ -166,10 +168,8 @@
 		font-style: normal;
 	}
 
-	@import url('https://fonts.googleapis.com/css2?family=family=Nanum+Gothic:wght@400;700&display=swap');
-
 	:root {
-		font-family: 'Atkinson Hyperlegible', sans-serif;
+		font-family: 'Atkinson Hyperlegible', 'Nanum Gothic', sans-serif;
 	}
 
 	textarea {
