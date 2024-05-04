@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { convertHangulToDPRK } from 'koconv';
+	import { convertHangulToDPRK, convertHangulToYale } from 'koconv';
 	import MdiTransferDown from '~icons/mdi/transfer-down';
 	// import smartquotes from 'smartquotes';
 	import { tick } from 'svelte';
@@ -10,6 +10,13 @@
 	let textArea: HTMLTextAreaElement;
 	let input: string = '';
 	let output: string = '';
+
+	let mode = 'Hangul -> DPRK';
+	$: convert =
+		{
+			'Hangul -> DPRK': convertHangulToDPRK,
+			'Hangul -> Yale': convertHangulToYale
+		}[mode] ?? convertHangulToDPRK;
 
 	// TOOD:
 	input = `붉은기 추켜들고 진격해간다
@@ -58,17 +65,8 @@
 		'”': '」'
 	};
 
-	/* TODO: sitelen toki pona -> sitelen munjan */
-	function convertTokiPona2MunJan(tokiPona: string, dictionary: Record<string, string>): string {
-		const words = tokiPona
-			.split(/([\W])/)
-			.filter((word) => word !== ' ')
-			.map((word) => (word in PUNCTUATIONS ? PUNCTUATIONS[word] : word));
-		return words.map((word) => (dictionary[word] ? dictionary[word] : word)).join('');
-	}
-
 	$: if (input) {
-		output = convertHangulToDPRK(input);
+		output = convert(input);
 	}
 
 	// $: if ($dictionary && input) {
@@ -121,8 +119,9 @@
 	<h1>Korean Script Converter</h1>
 
 	<div class="options">
-		<select disabled>
-			<option>DPRK</option>
+		<select bind:value={mode}>
+			<option value="Hangul -> DPRK">Hangul → DPRK</option>
+			<option value="Hangul -> Yale">Hangul → Yale</option>
 		</select>
 	</div>
 
