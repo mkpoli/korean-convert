@@ -19,96 +19,29 @@
 		}[mode] ?? convertHangulToDPRK;
 
 	// TOOD:
-	input = `붉은기 추켜들고 진격해간다
-	["석남", "Sŏngnam"],
-    ["왕십리", "Wangsimni"],
-    ["굽는다", "kumnŭnda"],
-    ["선로", "sŏllo"],
-    ["인덕원", "Indŏgwŏn"],
-    ["교구동", "Kyogu-dong"],
-    ["고비리", "Kobi-ri"],
-    ["금교", "Kŭmgyo"],
-    ["초도", "Chodo"],
-    ["강동", "Kangdong"],
-    ["칠보산", "Chilbosan"],
-    ["곡산", "Koksan"],
-    ["갑산", "Kapsan"],
-    ["앞산", "Apsan"],
-    ["삿갓봉", "Satkatbong"],
-    ["울산", "Ulsan"],
-    ["은률", "Ŭnryul"],
-    ["닭섬", "Taksŏm"],
-    ["물곬", "Mulkol"],
-    ["붉은바위", "Pulgŭnbawi"],
-    ["앉은바위", "Anjŭnbawi"],
-    ["백마산", "Paengmasan"],
-    ["꽃마을", "Kkonmaŭl"],
-    ["압록강", "Amrokgang"],
-    ["천리마", "Chŏllima"],
-    ["한나산", "Hallasan"],
-    ["전라도", "Jŏlla-do"],
-    ["기대산", "Kittaesan"],
-    ["새별읍", "Saeppyŏl-ŭp"],
-    ["뒤문", "Twinmun"],
-    ["앞언덕", "Ap-ŏndŏk"],
-    ["부엌안골", "Puŏk-angol"],
-    ["판교", "Phan-gyo"],
-    ["방어동", "Pang-ŏ-dong"],
-    ["평안남도 평성시", "Phyŏngannam-do Phyŏngsŏng-si"]
+	input = `\
+붉은기 추켜들고 진격해간다
+총대를 앞세우고 돌격해간다
+일심의 천만대오 이끌고가는
+그 모습은 선군기치다
+
+공격 공격 공격앞으로
+장군님의 혁명방식은
+백두산 번개처럼 공격
+정일봉 우뢰처럼 공격
 	`;
 
-	const PUNCTUATIONS: Record<string, string> = {
-		'.': '。',
-		',': '，',
-		':': '：',
-		'“': '「',
-		'”': '」'
-	};
+	// const PUNCTUATIONS: Record<string, string> = {
+	// 	'.': '。',
+	// 	',': '，',
+	// 	':': '：',
+	// 	'“': '「',
+	// 	'”': '」'
+	// };
 
 	$: if (input) {
 		output = convert(input);
 	}
-
-	// $: if ($dictionary && input) {
-	// 	output = convertTokiPona2MunJan(smartquotes(input), $dictionary);
-	// }
-
-	// let suggestionBox: HTMLDivElement;
-
-	// let suggestions: string[] = ['a', 'b', 'c'];
-
-	// // function getLastChar()
-
-	// function compileSuggestions(
-	// 	input: string,
-	// 	caretPos: number,
-	// 	dictionary: Record<string, string>
-	// ): string[] {
-	// 	// Get caret position
-	// 	console.log('carretPos', caretPos);
-	// 	console.log('inputLength', input.length);
-
-	// 	// Get substring until caret position
-	// 	const sub = input.slice(0, caretPos);
-	// 	console.log('sub', sub);
-
-	// 	// Get the last word
-	// 	const lastWord = sub.split(/[\s\W]/).pop();
-
-	// 	if (!lastWord) return [];
-	// 	return Object.keys(dictionary).filter((word) => word.startsWith(lastWord));
-	// }
-
-	// $: if ($dictionary) {
-	// 	suggestions = compileSuggestions(input, caretPos, $dictionary);
-	// }
-
-	// let textArea: HTMLTextAreaElement;
-
-	// let caretRect: DOMRect | undefined = undefined;
-	// let caretPos: number = 0;
-
-	// const MODES = ['Hangul -> Linear Hangul', 'Hangul -> DPRK'];
 </script>
 
 <svelte:head>
