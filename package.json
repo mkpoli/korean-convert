@@ -34,6 +34,6 @@
   },
   "type": "module",
   "dependencies": {
-    "koconv": "^0.1.1"
+    "koconv": "^0.1.2"
   }
 }
