@@ -56,6 +56,7 @@
 		<select bind:value={mode}>
 			<option value="Hangul -> DPRK">Hangul → DPRK</option>
 			<option value="Hangul -> Yale">Hangul → Yale</option>
+			<option value="Hangul -> MC2000">Hangul → MC2000</option>
 		</select>
 	</div>
 
