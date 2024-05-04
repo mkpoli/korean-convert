@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { convertHangulToDPRK, convertHangulToYale } from 'koconv';
+	import { convertHangulToDPRK, convertHangulToMC2000, convertHangulToYale } from 'koconv';
 	import MdiTransferDown from '~icons/mdi/transfer-down';
 	// import smartquotes from 'smartquotes';
 	import { tick } from 'svelte';
@@ -15,6 +15,7 @@
 	$: convert =
 		{
 			'Hangul -> DPRK': convertHangulToDPRK,
+			'Hangul -> MC2000': convertHangulToMC2000,
 			'Hangul -> Yale': convertHangulToYale
 		}[mode] ?? convertHangulToDPRK;
 
