@@ -1,6 +1,5 @@
 # Korean Script Converter
-
-Now only supports DPRK style romanization (modified McCune-Reischauer system) from Hangul (eonmun / chosŏn'gul) to Latin script.
+For support and contribution on conversion, see the individual npm package [koconv](https://github.com/mkpoli/koconv.git).
 
 ## License
 MIT License &copy; 2024 mkpoli
