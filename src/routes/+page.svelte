@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { convertHangulToDPRK, convertHangulToMC2000, convertHangulToYale } from 'koconv';
 	import MdiTransferDown from '~icons/mdi/transfer-down';
+	import MdiClose from '~icons/mdi/close';
+	import MdiContentCopy from '~icons/mdi/content-copy';
 	// import smartquotes from 'smartquotes';
 	import { tick } from 'svelte';
 	// import Suggestions from './Suggestions.svelte';
@@ -60,11 +62,35 @@
 	</div>
 
 	<div class="container">
-		<textarea class="text-box input-box" bind:value={input} bind:this={textArea} />
+		<div class="input">
+			<textarea class="text-box input-box" bind:value={input} bind:this={textArea} />
+			<button
+				class="clear-button"
+				style:display={input ? 'block' : 'none'}
+				on:click={() => {
+					input = '';
+					output = '';
+					textArea.focus();
+				}}
+			>
+				<MdiClose class="icon"></MdiClose>
+			</button>
+		</div>
 		<div class="convert">
 			<MdiTransferDown class="icon" />
 		</div>
-		<div class="text-box output-box">{output}</div>
+		<output>
+			<div class="text-box output-box">{output}</div>
+			<button
+				class="copy-button"
+				style:display={output ? 'block' : 'none'}
+				on:click={() => {
+					navigator.clipboard.writeText(output);
+				}}
+			>
+				<MdiContentCopy class="icon" />
+			</button>
+		</output>
 	</div>
 </main>
 
@@ -192,5 +218,46 @@
 		color: #eee;
 		white-space: break-spaces;
 		word-break: break-all;
+	}
+
+	.input {
+		position: relative;
+	}
+
+	.clear-button {
+		cursor: pointer;
+		display: inline-block;
+		margin-top: 10px;
+		padding: 5px;
+		border-radius: 50%;
+		background: none;
+		border: none;
+
+		position: absolute;
+		top: 0;
+		right: 1.5em;
+	}
+
+	.clear-button .icon {
+		font-size: 20px; /* Adjust size as needed */
+	}
+
+	output {
+		position: relative;
+	}
+
+	.copy-button {
+		cursor: pointer;
+		display: inline-block;
+		padding: 5px;
+		border-radius: 50%;
+		background: none;
+		border: none;
+
+		position: absolute;
+		top: 1em;
+		right: 1.5em;
+
+		color: white;
 	}
 </style>
